@@ -11,15 +11,20 @@ updates:
       prefix: fix
       prefix-development: chore
       include: scope
+    # Groups batch minor/patch only; every major arrives as its own PR to review separately.
     groups:
       react:
         patterns: ["react", "react-dom", "@types/react", "@types/react-dom"]
+        update-types: ["minor", "patch"]
       build-tooling:
         patterns: ["vite", "@vitejs/*", "vite-plugin-*", "typescript", "@types/node"]
+        update-types: ["minor", "patch"]
       lint:
         patterns: ["eslint", "@eslint/*", "eslint-*", "typescript-eslint", "globals", "prettier"]
+        update-types: ["minor", "patch"]
       test:
         patterns: ["vitest", "@vitest/*"]
+        update-types: ["minor", "patch"]
     ignore:
       # The tablet runs Chrome 109 (Windows 8.1); majors need a manual check.
       - dependency-name: "react"
@@ -31,6 +36,9 @@ updates:
       - dependency-name: "animejs"
         update-types: ["version-update:semver-major"]
       - dependency-name: "@types/animejs"
+        update-types: ["version-update:semver-major"]
+      # Follows the Node major in .nvmrc.
+      - dependency-name: "@types/node"
         update-types: ["version-update:semver-major"]
 
   - package-ecosystem: github-actions
