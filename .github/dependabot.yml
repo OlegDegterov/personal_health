@@ -1,0 +1,45 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      # Runtime deps ship inside the HTML → patch release; dev tooling → no release.
+      prefix: fix
+      prefix-development: chore
+      include: scope
+    groups:
+      react:
+        patterns: ["react", "react-dom", "@types/react", "@types/react-dom"]
+      build-tooling:
+        patterns: ["vite", "@vitejs/*", "vite-plugin-*", "typescript", "@types/node"]
+      lint:
+        patterns: ["eslint", "@eslint/*", "eslint-*", "typescript-eslint", "globals", "prettier"]
+      test:
+        patterns: ["vitest", "@vitest/*"]
+    ignore:
+      # The tablet runs Chrome 109 (Windows 8.1); majors need a manual check.
+      - dependency-name: "react"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react-dom"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/react*"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "animejs"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/animejs"
+        update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    commit-message:
+      prefix: ci
+    groups:
+      actions:
+        patterns: ["*"]
