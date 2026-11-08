@@ -1,0 +1,6 @@
+dist
+coverage
+src/vendor
+CHANGELOG.md
+package-lock.json
+*.bat

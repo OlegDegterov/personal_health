@@ -1,0 +1,28 @@
+{
+  "dailySummaries": [
+    {
+      "calendarDate": "2026-01-05",
+      "movement": { "steps": { "value": 8421, "goal": 9000 } },
+      "heartRate": { "restingValue": 54 },
+      "bodyBattery": { "maxValue": 88, "minValue": 21, "latestValue": 47 },
+      "stress": { "avgLevel": 31 },
+      "intensityMinutes": { "moderate": 20, "vigorous": 15, "goal": 150 },
+      "calories": { "burnedActive": 512 },
+      "sleep": { "sleepingSeconds": 25200 }
+    },
+    {
+      "calendarDate": "2026-01-06",
+      "totalSteps": 10400,
+      "dailyStepGoal": 10000,
+      "restingHeartRate": 56,
+      "bodyBatteryHighestValue": 75,
+      "bodyBatteryLowestValue": 30,
+      "bodyBatteryMostRecentValue": 60,
+      "averageStressLevel": 28
+    },
+    {
+      "calendarDate": "2025-12-31",
+      "totalSteps": 1
+    }
+  ]
+}

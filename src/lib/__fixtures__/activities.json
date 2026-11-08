@@ -1,0 +1,32 @@
+[
+  {
+    "activityName": "Morning Run",
+    "activityType": { "typeKey": "running" },
+    "startTimeLocal": "2026-01-06 07:10:00",
+    "distance": 6420.5,
+    "duration": 2140.2,
+    "averageHR": 148,
+    "calories": 420,
+    "maxHR": 171,
+    "aerobicTrainingEffect": 3.1,
+    "anaerobicTrainingEffect": 0.8,
+    "averageSpeed": 3.0,
+    "averageRunningCadenceInStepsPerMinute": 172,
+    "trainingEffectLabel": "BASE",
+    "fastestSplit_1000": 320,
+    "hrTimeInZone_1": 60,
+    "hrTimeInZone_2": 600,
+    "hrTimeInZone_3": 1100,
+    "hrTimeInZone_4": 300
+  },
+  {
+    "activityName": "Strength",
+    "activityType": { "typeKey": "strength_training" },
+    "startTimeLocal": "2026-01-05 18:30:00",
+    "duration": 3400,
+    "summarizedExerciseSets": [
+      { "category": "DEADLIFT", "subCategory": "BARBELL_DEADLIFT", "sets": 4, "reps": 20 },
+      { "category": "PULL_UP", "sets": 3, "reps": 24 }
+    ]
+  }
+]

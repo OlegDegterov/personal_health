@@ -1,0 +1,605 @@
+/* CRT phosphor terminal look. Sizes are in vh/vw so the layout fits any tablet screen. */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  background: #020a05;
+  color: #2dff8a;
+  font-family: Consolas, "Lucida Console", "Courier New", monospace;
+}
+.wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.6% 2.4%;
+  background: radial-gradient(ellipse at center, #062614 0%, #020a05 75%);
+}
+.scan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.28) 3px,
+    rgba(0, 0, 0, 0) 4px
+  );
+}
+.glow {
+  text-shadow: 0 0 6px rgba(45, 255, 138, 0.55);
+}
+.dim {
+  color: #159a52;
+}
+.frame {
+  border: 2px solid #1b7a45;
+  border-radius: 6px;
+  box-sizing: border-box;
+  position: relative;
+}
+.frame .ttl {
+  position: absolute;
+  top: -1.3vh;
+  left: 1.2vw;
+  background: #031208;
+  padding: 0 0.6vw;
+  font-size: 2vh;
+  line-height: 2.4vh;
+  letter-spacing: 2px;
+}
+
+.top {
+  height: 18vh;
+  position: relative;
+}
+.clock {
+  font-size: 12vh;
+  line-height: 1;
+  letter-spacing: 4px;
+}
+.clock .sec {
+  font-size: 5vh;
+  margin-left: 0.6vw;
+}
+.date {
+  font-size: 2.8vh;
+  letter-spacing: 2px;
+  margin-top: 0.5vh;
+}
+.wx {
+  position: absolute;
+  left: 40%;
+  top: 0.4vh;
+  height: 16vh;
+  white-space: nowrap;
+}
+.wx svg {
+  width: 12vh;
+  height: 12vh;
+  display: inline-block;
+  vertical-align: top;
+  filter: drop-shadow(0 0 4px rgba(45, 255, 138, 0.6));
+}
+.wx .wt {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 1.2vw;
+}
+.wx .now {
+  font-size: 7.5vh;
+  line-height: 1;
+}
+.wx .mm {
+  font-size: 2.4vh;
+  margin-top: 0.8vh;
+  letter-spacing: 1px;
+}
+.wx .ds {
+  font-size: 1.8vh;
+  margin-top: 0.4vh;
+}
+.pager {
+  margin-top: 1vh;
+  font-size: 1.9vh;
+}
+.pager .pgnum {
+  margin-left: 0.6vw;
+  letter-spacing: 2px;
+}
+.p2l {
+  height: 100%;
+  padding: 2.6vh 1.4vw 1vh 1.4vw;
+}
+.p2in {
+  height: 100%;
+  overflow: hidden;
+}
+.p2w {
+  height: 40%;
+  padding: 2.6vh 1.6vw 1vh 1.6vw;
+}
+.p2h {
+  height: calc(60% - 2.6vh);
+  margin-top: 2.6vh;
+  padding: 2.6vh 1.4vw 1vh 1.4vw;
+}
+.p2name {
+  font-size: 3.1vh;
+  margin-bottom: 0.4vh;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.p2sub {
+  font-size: 1.9vh;
+  margin-bottom: 1.4vh;
+}
+.kv {
+  font-size: 2.3vh;
+  line-height: 1.55;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kv .k {
+  display: inline-block;
+  width: 44%;
+  overflow: hidden;
+  vertical-align: top;
+  padding-right: 0.6vw;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+}
+.kv .bar {
+  letter-spacing: -1px;
+  font-size: 0.8em;
+}
+.p2sec {
+  font-size: 1.9vh;
+  margin: 1.4vh 0 0.6vh 0;
+  letter-spacing: 2px;
+}
+.ex {
+  font-size: 1.9vh;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hrow {
+  font-size: 1.9vh;
+  line-height: 1.6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hrow .c {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.p3l {
+  height: 100%;
+  padding: 2.6vh 1.4vw 1vh 1.4vw;
+}
+.p3c {
+  height: 52%;
+  padding: 2.6vh 1vw 0.8vh 1vw;
+}
+.p3a {
+  height: calc(48% - 2.6vh);
+  margin-top: 2.6vh;
+  padding: 2.6vh 1.6vw 1vh 1.6vw;
+}
+.score {
+  font-size: 9vh;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+}
+.scoreq {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 1.2vw;
+  font-size: 2.3vh;
+  line-height: 1.4;
+}
+.phase {
+  height: 3.4vh;
+  margin: 1.6vh 0 0.6vh 0;
+  white-space: nowrap;
+  font-size: 0;
+  border: 1px solid #1b7a45;
+}
+.phase div {
+  display: inline-block;
+  height: 100%;
+}
+.leg {
+  font-size: 1.75vh;
+  line-height: 1.5;
+}
+.leg span {
+  display: inline-block;
+  width: 1.4vh;
+  height: 1.4vh;
+  margin-right: 0.4vw;
+  vertical-align: middle;
+}
+.twocol .kv {
+  display: inline-block;
+  width: 49%;
+}
+.zrow {
+  font-size: 1.9vh;
+  line-height: 1.55;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.zrow .zk {
+  display: inline-block;
+  width: 12%;
+}
+.zrow .zb {
+  display: inline-block;
+  width: 60%;
+  letter-spacing: -1px;
+  font-size: 0.85em;
+}
+.status {
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: right;
+  font-size: 1.9vh;
+}
+.status .err {
+  color: #ffb347;
+}
+.btn {
+  display: inline-block;
+  margin-left: 0.6vw;
+  padding: 0.5vh 0.9vw;
+  border: 1px solid #1b7a45;
+  cursor: pointer;
+  font-size: 1.9vh;
+  letter-spacing: 1px;
+}
+.btn:hover {
+  background: #0b3a20;
+}
+
+.pagehost {
+  height: calc(100% - 19vh);
+  margin-top: 1vh;
+}
+.main {
+  height: 100%;
+}
+.left {
+  float: left;
+  width: 37%;
+  height: 100%;
+}
+.right {
+  float: right;
+  width: 61.4%;
+  height: 100%;
+}
+
+.body {
+  height: 100%;
+  padding: 2.6vh 1.2vw 1.2vh 1.2vw;
+  display: flex;
+  flex-direction: column;
+}
+.figwrap {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  overflow: visible;
+}
+.scanbar {
+  position: absolute;
+  left: -4%;
+  width: 108%;
+  height: 3px;
+  top: 0;
+  background: #8dffbe;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 0 14px 5px rgba(45, 255, 138, 0.55);
+}
+.mmv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  bottom: 2.2vh;
+}
+.mmv.mmb {
+  left: 50%;
+}
+.mmlbl {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2vh;
+  font-size: 1.6vh;
+  color: #159a52;
+}
+.mmlbl span {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+}
+.mmstripes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 2.2vh;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(2, 10, 5, 0) 0px,
+    rgba(2, 10, 5, 0) 2px,
+    rgba(2, 10, 5, 0.55) 2px,
+    rgba(2, 10, 5, 0.55) 3px
+  );
+}
+.cursor {
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.roll {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -160px;
+  height: 160px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(45, 255, 138, 0), rgba(45, 255, 138, 0.06), rgba(45, 255, 138, 0));
+}
+.fx-on .roll {
+  animation: roll 9s linear infinite;
+}
+@keyframes roll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(1400px);
+  }
+}
+.wrap {
+  overflow: hidden;
+  transform-origin: 50% 50%;
+}
+.plan {
+  font-size: 2.4vh;
+  letter-spacing: 1px;
+  margin-bottom: 0.6vh;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.plan b {
+  font-size: 3.1vh;
+  font-weight: normal;
+}
+.muscles {
+  font-size: 1.8vh;
+  margin-top: 0.6vh;
+  line-height: 1.45;
+}
+.next {
+  font-size: 1.8vh;
+  margin-top: 0.4vh;
+  line-height: 1.4;
+}
+
+.stats {
+  height: 42%;
+  padding: 2.8vh 1.6vw 1vh 1.6vw;
+}
+.stat {
+  font-size: 2.9vh;
+  line-height: 1;
+  margin-bottom: 1.55vh;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.stat .n {
+  display: inline-block;
+  width: 28%;
+  letter-spacing: 1px;
+  overflow: hidden;
+  vertical-align: top;
+}
+.stat .bar {
+  display: inline-block;
+  width: 38%;
+  letter-spacing: -1px;
+  overflow: hidden;
+  vertical-align: top;
+  font-size: 0.8em;
+  line-height: 1.25;
+}
+.stat .v {
+  display: inline-block;
+  width: 34%;
+  text-align: right;
+  overflow: hidden;
+  vertical-align: top;
+}
+.stat .v .dim {
+  font-size: 0.72em;
+}
+
+.charts {
+  height: 32%;
+  margin-top: 2.6vh;
+}
+.chart {
+  float: left;
+  width: 49%;
+  height: 100%;
+  padding: 2.6vh 1vw 0.8vh 1vw;
+}
+.chart + .chart {
+  float: right;
+}
+.cvbox {
+  width: 100%;
+  height: 100%;
+}
+.cvbox canvas {
+  display: block;
+}
+
+.acts {
+  height: calc(26% - 5.2vh);
+  margin-top: 2.6vh;
+  padding: 2.6vh 1.4vw 0.6vh 1.4vw;
+}
+.acts .inner {
+  height: 100%;
+  overflow: hidden;
+}
+.act {
+  font-size: 2vh;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+}
+.panel {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  width: min(820px, 94vw);
+  transform: translateX(-50%);
+  max-height: 90%;
+  overflow: auto;
+  background: #031208;
+  border: 2px solid #2dff8a;
+  padding: 22px 26px;
+  box-sizing: border-box;
+}
+.panel h2 {
+  margin: 0 0 14px 0;
+  font-weight: normal;
+  letter-spacing: 3px;
+}
+.row {
+  margin-bottom: 12px;
+}
+.row label {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+.row input,
+.row select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  font-size: 16px;
+  font-family: inherit;
+  background: #020a05;
+  color: #2dff8a;
+  border: 1px solid #1b7a45;
+}
+.week {
+  overflow: hidden;
+}
+.week div {
+  float: left;
+  width: 13.7%;
+  margin-right: 0.6%;
+  font-size: 14px;
+}
+.week select {
+  width: 100%;
+  font-size: 13px;
+  padding: 4px 2px;
+  font-family: inherit;
+  background: #020a05;
+  color: #2dff8a;
+  border: 1px solid #1b7a45;
+}
+.hint {
+  font-size: 13px;
+  margin-top: 4px;
+}
+.actions {
+  text-align: right;
+  margin-top: 14px;
+}
+pre {
+  font-size: 12px;
+  background: #020a05;
+  border: 1px solid #1b7a45;
+  padding: 8px;
+  max-height: 200px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.te {
+  margin: -0.4vh 0 0.4vh 44%;
+}
+.fx-on .fxv .stat .v,
+.fx-on .fxv .act {
+  animation: flick 0.42s steps(4) both;
+}
+.fx-on .fxv .stat:nth-child(2) .v,
+.fx-on .fxv .act:nth-child(2) {
+  animation-delay: 0.07s;
+}
+.fx-on .fxv .stat:nth-child(3) .v,
+.fx-on .fxv .act:nth-child(3) {
+  animation-delay: 0.14s;
+}
+.fx-on .fxv .stat:nth-child(4) .v {
+  animation-delay: 0.21s;
+}
+.fx-on .fxv .stat:nth-child(5) .v {
+  animation-delay: 0.28s;
+}
+@keyframes flick {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

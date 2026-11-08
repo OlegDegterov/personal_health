@@ -1,0 +1,28 @@
+[
+  {
+    "calendarDate": "2026-01-06",
+    "sleepTimeSeconds": 27000,
+    "deepSleepSeconds": 5400,
+    "lightSleepSeconds": 15000,
+    "remSleepSeconds": 6600,
+    "awakeSleepSeconds": 900,
+    "sleepStartTimestampLocal": 1767654000000,
+    "sleepEndTimestampLocal": 1767681900000,
+    "avgHeartRate": 55,
+    "averageRespirationValue": 14,
+    "lowestRespirationValue": 10,
+    "highestRespirationValue": 19,
+    "avgSleepStress": 18,
+    "awakeCount": 2,
+    "sleepNeed": { "actual": 480 },
+    "sleepScores": {
+      "overall": { "value": 84, "qualifierKey": "GOOD" },
+      "totalDuration": { "qualifierKey": "EXCELLENT" },
+      "stress": { "qualifierKey": "GOOD" },
+      "awakeCount": { "qualifierKey": "FAIR" },
+      "remPercentage": { "value": 24, "qualifierKey": "GOOD" },
+      "deepPercentage": { "value": 20, "qualifierKey": "GOOD" },
+      "lightPercentage": { "value": 56, "qualifierKey": "GOOD" }
+    }
+  }
+]

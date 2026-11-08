@@ -1,0 +1,46 @@
+{
+  "name": "personal-health",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "CRT-style Garmin health dashboard for a wall tablet",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build && node scripts/pack-tablet.mjs",
+    "preview": "vite preview",
+    "typecheck": "tsc -b",
+    "lint": "eslint --max-warnings 0 .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "size": "node scripts/check-size.mjs",
+    "ci": "npm run lint && npm run format:check && npm run typecheck && npm test && npm run build && npm run size"
+  },
+  "dependencies": {
+    "animejs": "3.2.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "@types/animejs": "3.1.12",
+    "@types/node": "24.19.2",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@vitejs/plugin-react": "4.3.4",
+    "eslint": "9.39.5",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-react-hooks": "5.2.0",
+    "globals": "17.14.0",
+    "prettier": "3.9.10",
+    "typescript": "5.6.3",
+    "typescript-eslint": "8.72.1",
+    "vite": "5.4.11",
+    "vite-plugin-singlefile": "2.0.3",
+    "vitest": "3.2.7"
+  }
+}
